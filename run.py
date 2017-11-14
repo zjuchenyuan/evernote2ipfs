@@ -8,7 +8,7 @@ from evernote.edam.notestore import NoteStore
 from base64 import b16encode
 
 """
-Evernote 2 IPFS
+Evernote To IPFS
 
 Author: zjuchenyuan
 
@@ -35,16 +35,10 @@ Author: zjuchenyuan
 等待笔记下载（缓存将写入__pycache__文件夹） 和 笔记处理(en-media转为img标签)
 最后将输出ipfs的id
 
-# 安全性讨论
-注意保密你的auth_token，其地位与你的印象笔记密码相同，如果泄露需要及时Revoke
-ipfs不会主动推送你的文件到其他节点，本代码执行后全球网络应该只会有一份(你的电脑上)
-如果你访问了ipfs.io/ipfs/...或其他公共gateway的链接，gateway将从你的电脑上下载对应文件，并缓存一段时间
-建议先访问127.0.0.1:8080/ipfs/...的链接，确认没有隐私泄露可以分享后再访问公共gateway
+## More
 
-# ipfs数据持久性讨论
-ipfs网络是会丢数据的！ 整个网络中没有任何节点pin、且公共gateway缓存过期后，数据就彻底丢失了
-你可能需要ipfs pinning service，如https://www.eternum.io/
-或者购买vps，自己手动pin你需要保留的资源
+安全性讨论 与 ipfs数据持久性讨论 见README
+
 """
 
 def safefilename(filename):
