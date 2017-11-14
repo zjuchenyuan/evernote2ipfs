@@ -49,7 +49,7 @@ python3 run.py
 
 ![](screenshot.png)
 
-[https://ipfs.io/ipfs/QmPN1WG3CEXfEQhyRWPuY6DJkKqzCgruVpXeESczyZqaV2](https://ipfs.io/ipfs/QmPN1WG3CEXfEQhyRWPuY6DJkKqzCgruVpXeESczyZqaV2)
+[https://ipfs.io/ipfs/QmZX2zUkvEhRMK1GW1ZfKYWa2D7zdRA5FTgDya1G8mjLGg](https://ipfs.io/ipfs/QmZX2zUkvEhRMK1GW1ZfKYWa2D7zdRA5FTgDya1G8mjLGg)
 
 ## 一点讨论
 
