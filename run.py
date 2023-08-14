@@ -2,10 +2,10 @@ import hashlib
 import os
 import pickle
 import re
-import subprocess # for calling `ipfs add ...`
 from evernote.api.client import EvernoteClient
 from evernote.edam.notestore import NoteStore
 from base64 import b16encode
+import ipfshttpclient
 
 """
 Evernote To IPFS
@@ -178,14 +178,11 @@ class Evernote2IPFS():
 
     def ipfsdir(self, targetdir):
         """
-        目前python包ipfsapi的add功能有bug，所以使用子进程调用的方式
+        Use the IPFS Python library to add the directory to IPFS.
         """
-        #resultdict = self.ipfs.add(targetdir, recursive=True)
-        #print(targetdir)
-        #return resultdict[-1]["Hash"]
-        command = ["ipfs","add","-r","-Q",targetdir]
-        cmd_result = subprocess.check_output(command).decode()
-        return cmd_result.replace("\n","")
+        client = ipfshttpclient.connect('/ip4/127.0.0.1/tcp/5001/http')
+        res = client.add(targetdir, recursive=True)
+        return res['Hash']
 
 
 if __name__=="__main__":
